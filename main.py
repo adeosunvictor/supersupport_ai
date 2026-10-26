@@ -23,6 +23,14 @@ from app.retrieval.hybrid import HybridRetriever, IndexNotReady
 load_dotenv()
 LOG = logging.getLogger(__name__)
 app = FastAPI(title='Superspace Support AI', version='2.2.0')
+@app.get("/")
+async def root():
+    return {
+        "service": "Superspace Support AI",
+        "version": "2.2",
+        "status": "online",
+        "documentation": "/docs"
+    }
 origins = [s.strip() for s in os.getenv('ALLOWED_ORIGINS','http://localhost:8000').split(',') if s.strip()]
 app.add_middleware(CORSMiddleware, allow_origins=origins, allow_methods=['GET','POST'], allow_headers=['Content-Type'])
 retriever = HybridRetriever(os.getenv('INDEX_DIR','data/index'))
