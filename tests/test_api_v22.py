@@ -31,8 +31,11 @@ def test_chat_contract_and_citations(client):
     assert result['timings_ms']['total']>=0
 
 def test_api_only_no_demo(client):
-    assert client.get('/').status_code==404
-    assert client.get('/ready').status_code==200
+    response = client.get("/")
+    assert response.status_code == 200
+    assert response.json()["service"] == "Superspace Support AI"
+
+    assert client.get("/ready").status_code == 200
 
 def test_five_parallel_chats(client):
     import concurrent.futures
