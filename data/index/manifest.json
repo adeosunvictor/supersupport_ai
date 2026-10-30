@@ -3,8 +3,8 @@
   "embedding_backend": "fastembed",
   "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "embedding_dimensions": 384,
-  "articles": 122,
-  "chunks": 336,
-  "source_hash": "4b5b73597ee1ce3ebad6211775904ca624984f5ac3214708b0487e682b550eb7",
-  "indexed_at": "2026-10-26T14:36:14.069310+00:00"
+  "articles": 121,
+  "chunks": 333,
+  "source_hash": "cdefba75bc3e7196aaaf2f6aac72765ea4b1a147b3a02f93cb32e208e14613ac",
+  "indexed_at": "2026-10-30T13:03:50.859423+00:00"
 }
